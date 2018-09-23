@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="stylesheet.css">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+	
+	<head>
+		<title>hallaskog.projects</title>
+		
+		<link rel="icon" href="./h.png">
+		
+		<style> 
+			.sidebar {
+				height: 100%;
+				width: 0;
+				position: fixed;
+				z-index: 1;
+				top: 70px;
+				left: 0;
+				background-color: rgb(0,0,0);
+				overflow-x: hidden;
+				transition: 0.5s;
+				padding-top: 60px;
+			}
+			
+			.sidebar a {
+				padding: 8px 8px 8px 32px;
+				text-decoration: none;
+				font-size: 25px;
+				color: #818181;
+				display: block;
+				transition: 0.3s;
+			}
+
+			.sidebar a:hover {
+				color: #f1f1f1;
+			}
+			
+			.sidebar .closeBtn {
+				position: absolute;
+				top: 10px;
+				right: 20px;
+				font-size: 31px;
+				margin-left: 50px;
+			}
+
+			@media screen and (max-height: 450px) {
+			  .sidebar {padding-top: 15px;}
+			  .sidebar a {font-size: 18px;}
+			}
+			
+			/*projects*/
+			#scrollLink1 {
+				position: absolute;
+				top: 0%;
+			}
+			
+			#project1 {
+				position: absolute;
+				top: 15%;
+				left: 0%;
+				width: 100%;
+				height: 85%;
+				z-index: -1;
+			}
+			
+			#line1 { 
+				position: absolute;
+				top: 99%;
+				z-index: -1;
+			}
+			
+			#scrollLink2 {
+				position: absolute;
+				top: 100%;
+			}
+			
+			#project2 {
+				position: absolute;
+				top: 115%;
+				left: 0%;
+				width: 100%;
+				height: 85%;
+				z-index: -1;
+			}
+			
+			#line2 { 
+				position: absolute;
+				top: 199%;
+				z-index: -1;
+			}
+			
+			/*Styles*/
+			
+			h1 {
+				position: absolute;
+				text-decoration: underline;
+				top: -5%;
+				left: 2%;
+				font-family: 'Josefin Sans', monospace;
+				font-size: 80px;
+			}
+			
+			#description {
+				position: absolute;
+				display: block;
+				margin-top: 5%;
+				left: 2%;
+				font-family: 'Josefin Sans', monospace;
+				font-size: 40px;
+				line-height: 0.3;
+				height: 70%;
+			}
+			
+			img {
+				position: absolute;
+				top: 10%;
+				left: 63%;
+				height: 80%;
+				width: auto;
+			}
+			
+			#download {
+				position: absolute;
+				top: 88%;
+				left: 2%;
+				text-decoration: none;
+				font-size: 40px;
+				color: rgb(76,76,76);
+			}
+			
+		</style>
+		
+	</head>
+	
+	
+	
+	<body>
+		
+		
+		
+		<div id="banner">
+			<p id="name" onclick="location.href='index.html';">hallaskog</p>
+			<div id="aboutBtn"><div id="about" onclick="location.href='about.html';">.about</div></div>
+			<div id="projectsBtnActive"><div id="projects">.projects</div></div>
+			<div id="gamesBtn" onclick="location.href='games.html';"><div id="games">.games</div></div>
+		</div>
+		
+		<div id="elementSidebar" class="sidebar">
+			<a href="javascript:void(0)" class="closeBtn" onclick="closeSidebar()">&times;</a>
+			<a href="#scrollLink1">Project 1: Portracer</a>
+			<a href="#scrollLink2">Project 2</a>
+		</div>
+		
+		<span style="font-size:30px;cursor:pointer;position:fixed;top:100px;" onclick="openSidebar()">&#9776;</span>
+		
+		<a id=scrollLink1></a>
+		
+		<div id="project1">
+			<h1>Portracer</h1>
+			<div id="description">
+				<p>Portracer is a lan-multiplayer racing game.</p>
+				<p>You can connect up to 8 Clients via IP/Port.</p>
+				<p>The race is won when one of the players crosses the finish line.</p>
+				<p>The game is written in Java and is run over a .jar file.</p>
+				<p>If you can't run the game by double clicking on the jar</p>
+				<p>open up a cmd window and navigate to the dictionary</p>
+				<p>where you saved the file.</p>
+				<p>Then run the command 'java -jar portracer.jar'.</p>
+				<br>
+				<p>Have fun!</p>
+			</div>
+			<img src="./images/portracer.png" alt="A Racetrack.">
+			<a id="download" href="./downloads/portracer.jar" download>Download V1.0</a>
+			
+		</div>
+		
+		<hr id="line1" size="2%" width="99%" noshade>
+		
+		<a id=scrollLink2></a>
+		
+		<div id="project2">
+			<h1>Coming soon!</h1>
+		</div>
+		
+		<hr id="line2" size="2%" width="99%" noshade>
+		
+		<script>
+			function openSidebar() {
+				document.getElementById("elementSidebar").style.width = "260px";
+			}
+			
+			function closeSidebar() {
+				document.getElementById("elementSidebar").style.width = "0px";
+			}
+		</script>
+		
+		
+	</body>
+</html>
