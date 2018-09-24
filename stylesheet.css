@@ -299,10 +299,10 @@ body {
 
 #aboutTextbox {
 	position: fixed;
-	left: 25%;
-	top: 25%;
-	width: 50%;
-	height: 50%;
+	left: 25vw;
+	top: 25vh;
+	width: 50vw;
+	height: 50vh;
 	background-color:  rgb(35,39,42);
 	opacity: 0.9;
 	border-style: solid;
