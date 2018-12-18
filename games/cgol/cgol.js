@@ -253,7 +253,7 @@ function drawMenu() {
 	context.font = fontSize + "px Unlock";
 	context.fillText("Settings",fontSize, fontSize*2);
 	
-	context.fillText("Widht:", fontSize, fontSize*3.25);
+	context.fillText("Width:", fontSize, fontSize*3.25);
 	var widthNumber = document.getElementById("widthNumber");
     widthNumber.style = "position:absolute;"+
 						"left:"+(fontSize*1.5+context.measureText("Width:").width)+"px;"+
@@ -265,7 +265,7 @@ function drawMenu() {
 	context.fillText("Height:", fontSize, fontSize*4.5);
 	var heightNumber = document.getElementById("heightNumber");
     heightNumber.style = "position:absolute;"+
-						 "left:"+(fontSize*1.5+context.measureText("Widht:").width)+"px;"+
+						 "left:"+(fontSize*1.5+context.measureText("Width:").width)+"px;"+
 						 "top:"+(fontSize*4)+"px;"+
 						 "width:"+canvas.width/10+"px;"+
 						 "height:"+fontSize/2+"px;"+
