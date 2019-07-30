@@ -1,52 +1,14 @@
 <!DOCTYPE html>
 <html>
-	<link rel="stylesheet" href="stylesheet.css">
+	
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 	
 	<head>
 		<title>hallaskog.projects</title>
 		
-		<link rel="icon" href="./h.png">
+		<link rel="icon" href="../h.png">
 		
 		<style> 
-			.sidebar {
-				height: 100%;
-				width: 0;
-				position: fixed;
-				z-index: 1;
-				top: 70px;
-				left: 0;
-				background-color: rgb(0,0,0);
-				overflow-x: hidden;
-				transition: 0.5s;
-				padding-top: 4vh;
-			}
-			
-			.sidebar a {
-				padding: 0.2vw 0.2vw 0.2vw 0.8vw;
-				text-decoration: none;
-				font-size: 1.4vw;
-				color: #818181;
-				display: block;
-				transition: 0.3s;
-			}
-
-			.sidebar a:hover {
-				color: #f1f1f1;
-			}
-			
-			.sidebar .closeBtn {
-				position: absolute;
-				top: 10px;
-				right: 20px;
-				font-size: 31px;
-				margin-left: 50px;
-			}
-
-			@media screen and (max-height: 450px) {
-			  .sidebar {padding-top: 15px;}
-			  .sidebar a {font-size: 18px;}
-			}
 			
 			/*projects*/
 			#scrollLink1 {
@@ -125,10 +87,22 @@
 				left: 3vw;
 				text-decoration: underline;
 				font-size: 2vw;
-				color: rgb(76,76,76);
+				color: rgb(255, 255, 255);
+			}
+			
+			#canvas {
+				position:fixed;
+				top: 0%;
+				left: 0%;
+				width: 100%;
+				height: 100%;
+				border:1px solid #000000;
+				z-index: -1;
 			}
 			
 		</style>
+		
+		
 		
 	</head>
 	
@@ -136,24 +110,21 @@
 	
 	<body>
 		
-		
-		
-		<div id="banner">
-			<p id="name" onclick="location.href='index.html';">hallaskog</p>
-			<div id="aboutBtn"><div id="about" onclick="location.href='about.html';">.about</div></div>
-			<div id="projectsBtnActive"><div id="projects">.projects</div></div>
-			<div id="gamesBtn" onclick="location.href='games.html';"><div id="games">.games</div></div>
-		</div>
-		
-		<div id="elementSidebar" class="sidebar">
-			<a href="javascript:void(0)" class="closeBtn" onclick="closeSidebar()">&times;</a>
-			<a href="#scrollLink1">Project 1: Portracer</a>
-			<a href="#scrollLink2">Project 2</a>
-		</div>
-		
-		<span style="font-size:2vw;cursor:pointer;position:fixed;top:100px;" onclick="openSidebar()">&#9776;</span>
-		
-		<a id=scrollLink1></a>
+		<canvas id="canvas"></canvas>
+		<script>
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+
+		canvas.width  = window.innerWidth;
+		canvas.height = window.innerHeight;
+		//background
+		var grd = ctx.createLinearGradient(0, 0, 0, canvas.height);
+		grd.addColorStop(1, "#0000ff");
+		grd.addColorStop(0, "#66ccff");
+
+		ctx.fillStyle = grd;
+		ctx.fillRect(0, 0, canvas.width, canvas.height);
+		</script>
 		
 		<div id="project1">
 			<h1>Portracer</h1>
@@ -169,30 +140,10 @@
 				<br>
 				<p>Have fun!</p>
 			</div>
-			<img id="img1" src="projects/images/portracer.png" alt="A Racetrack.">
+			<img id="img1" src="./portracer/portracer.png" alt="A Racetrack.">
 			<a id="download" href="projects/downloads/portracer.jar" download>Download V1.0</a>
 			
 		</div>
-		
-		<hr id="line1" size="2%" width="99%" noshade>
-		
-		<a id=scrollLink2></a>
-		
-		<div id="project2">
-			<h1>Coming soon!</h1>
-		</div>
-		
-		<hr id="line2" size="2%" width="99%" noshade>
-		
-		<script>
-			function openSidebar() {
-				document.getElementById("elementSidebar").style.width = "260px";
-			}
-			
-			function closeSidebar() {
-				document.getElementById("elementSidebar").style.width = "0px";
-			}
-		</script>
 		
 		
 	</body>
