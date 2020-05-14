@@ -61,7 +61,7 @@ function draw() {
 	var names = ["portracer", "spaceship", "parallax effect", "cgol", "particlesim", "coming soon"];
 	var imgSrc = ["./projects/portracer/race.png", "./projects/spaceship/spaceship.png", "./projects/p1/ship.png",
 				  "./projects/cgol/cgolLogoNew.png", "./projects/particleSimulation/particle.png", "./time.png"];
-				  
+	var img = [];
 	for(var i = 0; i < 3; i++) {
 		for(var j = 0; j < 2; j++) {
 			px = x + i*(size + spacingsize);
@@ -76,10 +76,10 @@ function draw() {
 			}
 			 
 			if(imgSrc[i + 3*j] != undefined) {
-				var img = new Image(200, 200);
-				img.src = imgSrc[i + 3*j];
+				img[i + 3*j] = new Image(200, 200);
+				img[i + 3*j].src = imgSrc[i + 3*j];
+				ctx.drawImage(img[i + 3*j], px + 1.5*size/10, py + size/10, 7*size/10, 7*size/10);
 			
-				ctx.drawImage(img, px + 1.5*size/10, py + size/10, 7*size/10, 7*size/10);
 			}
 			
 		}
