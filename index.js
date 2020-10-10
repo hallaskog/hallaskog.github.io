@@ -20,7 +20,7 @@ function draw() {
 	var headersize = canvas.height/8;
 
 	var fontSize = canvas.height/12;
-	var text = "hallaskog.github.io";
+	var text = "paultroeger.github.io";
 	ctx.fillStyle = 'black';
 
 	ctx.font = fontSize + "px 'Roboto Mono'";
